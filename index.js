@@ -58,7 +58,20 @@ const imgBackground = [
     "img/green.jpg",
     "img/indigo.jpg",
 ]
-/* document.querySelector(".data").innerHTML = `${weekDays[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+
+function getColor(element){
+    element.style.background = `${hexCodes[d.getDay()]}`;
+}
+
+document.querySelector(".data").innerHTML = `${weekDays[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
 document.querySelector(".colorOfTheDay").innerHTML = colors[d.getDay()];
-document.querySelector(".sentenceOfTheDay").innerHTML = sentences[d.getDay()]; */
-document.querySelector(".banner").style = `background: url(${d.getDay()}) no-repeat center center;`
+document.querySelector(".sentenceOfTheDay").innerHTML = sentences[d.getDay()]; 
+document.querySelector(".banner").style = `background: url(${imgBackground[d.getDay()]}) no-repeat center center; background-size: cover;`
+getColor(document.querySelector('nav'));
+document.querySelector('.cerchio').style = `border: 5px solid ${hexCodes[d.getDay()]};`
+Array.from(document.querySelectorAll(".todayIs")).map(el => el.style.color = `${hexCodes[d.getDay()]}`);
+getColor(document.querySelector('.learnMoreBtn'));
+Array.from(document.querySelectorAll(".d_card")).map(el => el.style = `border: 5px solid ${hexCodes[d.getDay()]};`);
+Array.from(document.querySelectorAll(".heading")).map(el => el.style.background = `${hexCodes[d.getDay()]}`);
+document.querySelector('.secondLine').style.background = `${hexCodes[d.getDay()]}`;
+getColor(document.querySelector(".containerFooter"))
