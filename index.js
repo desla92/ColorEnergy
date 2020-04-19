@@ -75,3 +75,4 @@ Array.from(document.querySelectorAll(".d_card")).map(el => el.style = `border: 5
 Array.from(document.querySelectorAll(".heading")).map(el => el.style.background = `${hexCodes[d.getDay()]}`);
 document.querySelector('.secondLine').style.background = `${hexCodes[d.getDay()]}`;
 getColor(document.querySelector(".containerFooter"))
+document.querySelector('head').insertAdjacentHTML('beforeend', `<link rel="icon" href="${imgBackground[d.getDay()]}" type="icon/png">`)
